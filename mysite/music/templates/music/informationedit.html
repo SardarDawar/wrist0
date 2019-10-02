@@ -18,22 +18,22 @@ body {
 
 .sidenav {
   height: 100%;
-  width: 130px;
+  width: 170px;
   position: fixed;
   z-index: 1;
-  top: 45px;
+  top: 0px;
   left: 0;
   background-color: #111;
   overflow-x: hidden;
-  padding-top: 20px;
+  padding-top: 130px;
 }
 
 .sidenav a {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
-  font-size: 22px;
+  font-size: 15px;
   font-family:Arial, Helvetica, sans-serif;
-  color: white;
+  color: rgb(223, 211, 211);
   display: block;
 }
 
@@ -41,10 +41,13 @@ body {
   color: #f1f1f1;
 }
 
+.sidenav a {
+  padding-bottom: 25px
+}
 .main {
   margin-left: 160px; /* Same as the width of the sidenav */
   font-size: 28px; /* Increased text to enable scrolling */
-  padding: 0px 10px;
+  margin-top: -65px;
 }
 
 @media screen and (max-height: 450px) {
@@ -58,19 +61,31 @@ body {
 <div class="sidenav">
     <br>
   <a href="{% url 'dashboard' request.user.username %}">Dashboard</a>
-  <a href="{% url 'information' %}">Services</a>  <a href="#clients">Clients</a>
-  <a href="#contact">Contact</a>
+  <a href="{% url 'information' %}">Add Band</a>
+  <a href="#clients">Edit Band</a>
+  <a href="{% url 'contact' %}">Contact</a>
 </div>
 
 <div class="main">
-  <h2>Sidebar</h2>
-{{a}}
-  <form method="POST" action=".">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" class='btn btn primary'  >
-  </form>
-</div>
+<center>
+<div class="card" style="width: 18rem;">
+ 
+  <div class="card-body">
+    <h5 class="card-title">Form
+    </h5>
+    <p class="card-text">
+ <form method="POST" class="form-group">
+   {% csrf_token %}
+   {{form.as_p}}
+   <input type="submit" class="btn btn primary">
+ </form>
+
+    </p>
+  </div></div>
+</div></center>
+
+
+
    
 </body>
 </html> 
