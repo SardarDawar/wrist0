@@ -1,0 +1,35 @@
+{% extends 'Base.html' %}
+{% load static %}
+
+
+
+
+
+
+
+{% block content %}
+
+
+<div class="container">
+
+<center>{% if query %}
+   
+    
+      {% for i in blogs %}
+      <div class="card" style="width:22rem;">
+   <h5>User</h5>  {{i.user}}<br>
+   <h5>Contact Number</h5>   {{i.contactNumber}}<br>
+   <h5>City</h5>   {{i.city}}<br>
+   <h5>County</h5> {{i.county}}<br>
+   <h5>State</h5>   {{i.state}}<br>
+   <h5>country</h5>  {{i.country}}<br>
+   <h5>Continent</h5>  {{i.continent}}<br>
+    </div><br><br><br>
+      {% endfor %}
+      
+  
+    {% endif %}
+
+</center>
+</div>
+{% endblock content %}
