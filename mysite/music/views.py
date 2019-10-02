@@ -229,7 +229,7 @@ def InformationView(request):
            
             new.save()
             form.save()
-            return redirect('home')
+            return HttpResponseRedirect(reverse('dashboard', args=[request.user.username])) 
 
     
     context={
