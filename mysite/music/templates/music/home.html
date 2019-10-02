@@ -1,0 +1,338 @@
+{% extends 'Base.html' %}
+{% load static %}
+{% block title %} ALUM {% endblock %}
+
+
+
+{% block register %}
+
+{% if request.user.is_authenticated  %}
+<div class="register-login-area">
+
+
+
+
+    <a href="{% url 'profile' request.user.username  %}" class="btn">{{ request.user.username }}</a>
+
+    <a href="{% url 'dashboard' request.user.username  %}" class="btn">dashboard</a>
+    <a href="{% url 'logout' %}" class="btn">logout</a>
+
+</div>
+{% else %}
+<div class="register-login-area">
+    <a href="{% url 'register' %}" class="btn">Register</a>
+    <a href="{% url 'login' %}" class="btn">Login</a>
+</div>
+{% endif %}
+{% endblock  %}
+
+
+
+
+
+{% block content %}
+
+<!-- ##### Hero Area Start ##### -->
+<section class="hero-area bg-img bg-overlay-2by5" style="background-image: url( '{% static "music/bg-img/bg1.jpg" %}' );">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <!-- Hero Content -->
+                <div class="hero-content text-center">
+
+                    {% if request.user.is_authenticated  %}
+                    <h2>Let's Secure Future</h2>
+                    {% else %}
+                    <h2>Let's Secure Future</h2>
+                    <a href="{% url 'login' %}" class="btn clever-btn">Get Started</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ##### Hero Area End ##### -->
+
+<!-- ##### Cool Facts Area Start ##### -->
+<section class="cool-facts-area section-padding-100-0">
+    <div class="container">
+        <div class="row">
+            <!-- Single Cool Facts Area -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="single-cool-facts-area text-center mb-100 wow fadeInUp" data-wow-delay="250ms">
+                    <div class="icon">
+                        <img src="{% static  'music/core-img/docs.png' %}" alt="">
+                    </div>
+                    <h2><span class="counter">1000</span></h2>
+                    <h5>Happy Users</h5>
+                </div>
+            </div>
+
+            <!-- Single Cool Facts Area -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="single-cool-facts-area text-center mb-100 wow fadeInUp" data-wow-delay="500ms">
+                    <div class="icon">
+                        <img src="{% static 'music/core-img/star.png' %}" alt="">
+                    </div>
+                    <h2><span class="counter">50</span></h2>
+                    <h5>Badges Sold</h5>
+                </div>
+            </div>
+
+            <!-- Single Cool Facts Area -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="single-cool-facts-area text-center mb-100 wow fadeInUp" data-wow-delay="750ms">
+                    <div class="icon">
+                        <img src="{% static 'music/core-img/events.png' %}" alt="">
+                    </div>
+                    <h2><span class="counter">110</span></h2>
+                    <h5>Success count</h5>
+                </div>
+            </div>
+
+            <!-- Single Cool Facts Area -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="single-cool-facts-area text-center mb-100 wow fadeInUp" data-wow-delay="1000ms">
+                    <div class="icon">
+                        <img src="{% static 'music/core-img/earth.png' %}" alt="">
+                    </div>
+                    <h2><span class="counter">50</span></h2>
+                    <h5>Available Badges</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ##### Cool Facts Area End ##### -->
+
+<!-- ##### Popular Courses Start ##### -->
+<section class="popular-courses-area section-padding-100-0" style="background-image: url('{% static  'music/core-img/texture.png'  %}';">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-heading">
+                    <h3>Popular Styles</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Single Popular Course -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="single-popular-course mb-100 wow fadeInUp" data-wow-delay="250ms">
+                    <img src="{% static 'music/bg-img/a.jpg' %}" alt="">
+                    <!-- Course Content -->
+                    <div class="course-content">
+                        <h4>xyz</h4>
+                        <div class="meta d-flex align-items-center">
+                            <a href="#">designer </a>
+                            <span><i class="fa fa-circle" aria-hidden="true"></i></span>
+                            <a href="#">xyz &amp; xyz</a>
+                        </div>
+                        <p></p>
+                    </div>
+                    <!-- Seat Rating Fee -->
+                    <div class="seat-rating-fee d-flex justify-content-between">
+                        <div class="seat-rating h-100 d-flex align-items-center">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Popular Course -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="single-popular-course mb-100 wow fadeInUp" data-wow-delay="250ms">
+                    <img src="{% static 'music/bg-img/a.jpg' %}" alt="">
+                    <!-- Course Content -->
+                    <div class="course-content">
+                        <h4>xyz</h4>
+                        <div class="meta d-flex align-items-center">
+                            <a href="#">designer </a>
+                            <span><i class="fa fa-circle" aria-hidden="true"></i></span>
+                            <a href="#">xyz &amp; xyz</a>
+                        </div>
+                        <p></p>
+                    </div>
+                    <!-- Seat Rating Fee -->
+                    <div class="seat-rating-fee d-flex justify-content-between">
+                        <div class="seat-rating h-100 d-flex align-items-center">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Popular Course -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="single-popular-course mb-100 wow fadeInUp" data-wow-delay="250ms">
+                    <img src="{% static 'music/bg-img/a.jpg' %}" alt="">
+                    <!-- Course Content -->
+                    <div class="course-content">
+                        <h4>xyz</h4>
+                        <div class="meta d-flex align-items-center">
+                            <a href="#">designer </a>
+                            <span><i class="fa fa-circle" aria-hidden="true"></i></span>
+                            <a href="#">xyz &amp; xyz</a>
+                        </div>
+                        <p></p>
+                    </div>
+                    <!-- Seat Rating Fee -->
+                    <div class="seat-rating-fee d-flex justify-content-between">
+                        <div class="seat-rating h-100 d-flex align-items-center">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- ##### Popular Courses End ##### -->
+
+<!-- ##### Best Tutors Start ##### -->
+<section class="best-tutors-area section-padding-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-heading">
+                    <h3>Best Designers</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="tutors-slide owl-carousel wow fadeInUp" data-wow-delay="250ms">
+
+                    <!-- Single Tutors Slide -->
+                    <div class="single-tutors-slides">
+                        <!-- Tutor Thumbnail -->
+                        <div class="tutor-thumbnail">
+                            <img src="{% static 'music/bg-img/test.png' %}" alt="">
+                        </div>
+                        <!-- Tutor Information -->
+                        <div class="tutor-information text-center">
+                            <h5>Syed Abdul Rehman Kashif</h5>
+                            <span>Professor</span>
+                            <p></p>
+
+                        </div>
+                    </div>
+
+                    <!-- Single Tutors Slide -->
+                    <div class="single-tutors-slides">
+                        <!-- Tutor Thumbnail -->
+                        <div class="tutor-thumbnail">
+                            <img src="{%  static 'music/bg-img/test.png'  %}" alt="">
+                        </div>
+                        <!-- Tutor Information -->
+                        <div class="tutor-information text-center">
+                            <h5>Dr. Haroon Babri</h5>
+                            <span>Professor</span>
+                            <p></p>
+
+                        </div>
+                    </div>
+
+                    <!-- Single Tutors Slide -->
+                    <div class="single-tutors-slides">
+                        <!-- Tutor Thumbnail -->
+                        <div class="tutor-thumbnail">
+                            <img src="{% static 'music/bg-img/test.png' %}" alt="">
+                        </div>
+                        <!-- Tutor Information -->
+                        <div class="tutor-information text-center">
+                            <h5>Mr. Umer Shahid</h5>
+                            <span>Lecturer</span>
+                            <p></p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+        <!-- ##### Best Tutors End ##### -->
+
+
+        <!-- ##### Upcoming Events Start ##### -->
+        <section class="upcoming-events section-padding-100-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-heading">
+                            <h3>Upcoming Designs</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- Single Upcoming Events -->
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="single-upcoming-events mb-50 wow fadeInUp" data-wow-delay="250ms">
+                            <!-- Events Thumb -->
+                            <div class="events-thumb">
+                                <img src="{% static 'music/bg-img/e1.jpg' %}" alt="">
+                                <h6 class="event-date"></h6>
+                                <h4 class="event-title">Rectangle</h4>
+                            </div>
+                            <!-- Date & Fee -->
+                            <div class="date-fee d-flex justify-content-between">
+                                <div class="date">
+                                    <p><i class="fa fa-clock"></i></p>
+                                </div>
+                                <!-- <div class="events-fee">
+                              <a href="#">Join</a>
+                          </div> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Single Upcoming Events -->
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="single-upcoming-events mb-50 wow fadeInUp" data-wow-delay="500ms">
+                            <!-- Events Thumb -->
+                            <div class="events-thumb">
+                                <img src="{% static 'music/bg-img/e2.jpg' %}" alt="">
+                                <h6 class="event-date"></h6>
+                                <h4 class="event-title">Ring</h4>
+                            </div>
+                            <!-- Date & Fee -->
+                            <div class="date-fee d-flex justify-content-between">
+                                <div class="date">
+                                    <p><i class="fa fa-clock"></i></p>
+                                </div>
+                                <!-- <div class="events-fee">
+                              <a href="#" class="free">Join</a>
+                          </div> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Single Upcoming Events -->
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="single-upcoming-events mb-50 wow fadeInUp" data-wow-delay="750ms">
+                            <!-- Events Thumb -->
+                            <div class="events-thumb">
+                                <img src="{% static 'music/bg-img/e3.jpg' %}" alt="">
+                                <h6 class="event-date"></h6>
+                                <h4 class="event-title">Ovals</h4>
+                            </div>
+                            <!-- Date & Fee -->
+                            <div class="date-fee d-flex justify-content-between">
+                                <div class="date">
+                                    <p><i class="fa fa-clock"></i></p>
+                                </div>
+                                <!-- <div class="events-fee">
+                              <a href="#">Join</a>
+                          </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ##### Upcoming Events End ##### -->
+
+
+        {% endblock content %}
